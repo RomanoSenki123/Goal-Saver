@@ -1,0 +1,124 @@
+<html>
+<head>
+	<title> Goal Saver| Home </title>
+
+		<link rel="stylesheet" href="style.css"/>
+		<script src="JS/Account.js" defer></script>
+			<script src="JS/Effects.js"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Piedra&display=swap" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Montaga&display=swap" rel="stylesheet">
+			<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<script src="JS/pouchdb-7.0.0.min.js"></script>
+	<script type="text/javascript" >
+	<!--
+	var db;
+
+			db = new PouchDB("Goals_db");
+
+	    alert(" Welcome to Goal Saver ");
+	-->
+	</script>
+	<script type="text/javascript" src="JS/Account.js" > </script>
+
+		<div id="side-menu" class="side-nav">
+			<a href="#" class="btn-close" onclick="closeSlideMenu()">+</a>
+			<!-- User Card -->
+			<div class="card">
+				<div class="card-img">
+					<img src="img/admin.png" alt="Icon" height="300px" width="300px">
+				</div>
+				<div class="card-info">
+					<h3>
+					<script>
+					var Name=localStorage.getItem("Name");
+					document.write("Welcome "+ Name);
+					</script>
+					</h3>
+					<a href="update.html" class="card-link">Update Profile </a><br>
+					<button class="Card-btn" onClick="SignOut()">Sign Out</button>
+				</div>
+					<div class="sidebar-link">
+				<a href="index.html" class="links">Home</a>
+					<a href="AddGoals.html" class="links">Add Goals</a>
+					<a href="Deposit.html" class="links">Deposit</a>
+					<a href="ViewAll.html" class="links">ViewAll</a>
+					<a href="Status.html" class="links">Status</a>
+				</div>
+			</div>
+		</div>
+
+	<div id="container">
+
+
+		<header>
+			<div class="SVG ">
+					<a href="#" onclick="openSlideMenu()">
+						<!-- <svg width="30"height="30"> -->
+							<!-- <path d="M0,5,30,5" stroke="White" stroke-width="5"/> -->
+							<!-- <path d="M0,14,30,14" stroke="white" stroke-width="5"/> -->
+							<!-- <path d="M0,23,30,23" stroke="White" stroke-width="5"/> -->
+						<!-- </svg> -->
+						<img src="img/side.png" alt="sidebar" height="70px" width="70px"/>
+					</a>
+				</div>
+			<h1 class="logo">Goal Saver </h1>
+		</header>
+
+		<main>
+
+
+		<section class="Welcome">
+			<div class="blank"></div>
+			<img src="img/home-bg.jpg" alt="Goal-bg"  height="100%" class="home-img" />
+			<h1 class="welcome-position">Welcome to GOAL SAVER! </h1>
+			<p class="p-position"> Save all your goals here. </p>
+
+		</section>
+
+
+		<section class="H-links">
+			<div class="s1">
+			<a href="update.html" class="box-links">
+				<div class="box margin">
+					<h2>Update Profile</h2>
+				</div>
+			</a>
+
+			<a href="AddGoals.html" class="box-links">
+				<div class="box2 ">
+					<h2>Add Goals</h2>
+				</div>
+			</a>
+			</div>
+			<div class="s2">
+			<a href="Deposit.html" class="box-links">
+				<div class="box">
+					<h2>Deposit</h2>
+				</div>
+			</a>
+
+			<a href="Status.html" class="box-links">
+				<div class="box2 margin">
+					<h2> All Goals </h2>
+				</div>
+			</a>
+			</div>
+		</section>
+
+	</main>
+
+	<footer>
+	<p> Created By:Alexa-Rae & Romario &copy; </p>
+
+	</footer>
+
+
+</body>
+</html>

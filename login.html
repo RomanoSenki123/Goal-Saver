@@ -1,0 +1,54 @@
+<html>
+<head>
+	<title> Goal Saver| Login</title>
+
+		<link rel="stylesheet" href="style.css"/>
+
+		<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+<body>
+	<script src="JS/pouchdb-7.0.0.min.js"></script>
+	<script type="text/javascript" >
+	<!--
+	var db;
+
+			db = new PouchDB("Goals_db");
+
+	    alert(" Welcome to Goal Saver ");
+	-->
+	</script>
+	<script src="JS/Account.js" defer></script>
+	<div class="login-bg">
+		<div class="form-box">
+			<div class="button-box">
+				<div id="btn"></div>
+				<button type="button" class="box-btn" onClick="login()">Login</button>
+				<button type="button" class="box-btn" onClick="Register()">Register</button>
+			</div>
+			<form id="Login" class="input-group">
+
+				<input type="text" id="userName" class="input-field" placeholder="Username" required/><br>
+				<input type="Password" id="password" placeholder="Password" class="input-field" required/><br>
+
+				<button class="submit-btn" onClick="Login()"> Login </button>
+
+			</form>
+
+			<form name="input" id="Register" class="input-group">
+
+				<input type="text" id="Username" class="input-field" placeholder="Username"/><br>
+				<input type="text" id="Name" class="input-field" placeholder="Name"/><br>
+				<input type="text" id="Number" class="input-field" placeholder="Phone Number- xxx-xxxx" maxlength="8"/><br>
+				<input type="Password" id="Password" placeholder="Password" class="input-field" /><br>
+				<input type="Password" id="VPassword" placeholder="Verify Password" class="input-field" /><br>
+
+				<button class="submit-btn"  onClick="addAccount()"> Register </button>
+
+			</form>
+		</div>
+	</div>
+	<script src="JS/Effects.js"></script>
+
+
+</body>
+</html>

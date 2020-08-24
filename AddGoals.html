@@ -1,0 +1,149 @@
+<html>
+<head>
+	<title> Goal Saver| Home </title>
+
+		<link rel="stylesheet" href="style.css"/>
+		<script src="JS/Account.js" defer></script>
+			<script src="JS/Effects.js"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Piedra&display=swap" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Montaga&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+		<style>
+		h2{
+			font-size:3em;
+			margin-top:2%;
+
+		}
+		.input{
+
+			font-size:1.5em;
+			background:#eee;
+			border:none;
+			padding: 20px 15px;
+
+			margin:3% 2%;
+			width:90%;
+			}
+		.label{
+			font-size:2.5em;
+			margin-top:2%;
+			font-family:'Piedra', cursive;
+		}
+select{
+height:5%;
+width:25%;
+font-size:1.2em;
+}
+option{
+font-size:20px;}
+
+		</style>
+</head>
+<body>
+	<script src="JS/pouchdb-7.0.0.min.js"></script>
+	<script type="text/javascript" >
+	<!--
+	var db;
+
+			db = new PouchDB("Goals_db");
+
+	-->
+	</script>
+	<script src="JS/Account.js" defer></script>
+
+
+		<div id="side-menu" class="side-nav">
+			<a href="#" class="btn-close" onclick="closeSlideMenu()">+</a>
+			<!-- User Card -->
+			<div class="card">
+				<div class="card-img">
+					<img src="img/admin.png" alt="Icon"  height="300px" width="300px">
+				</div>
+				<div class="card-info">
+					<h3>
+					<script>
+					var Name=localStorage.getItem("Name");
+					document.write("Welcome "+ Name);
+					</script>
+					</h3>
+					<a href="update.html" class="card-link">Update Profile </a><br>
+					<button class="Card-btn" onClick="SignOut()">Sign Out</button>
+				</div>
+					<div class="sidebar-link">
+					<a href="index.html" class="links">Home</a>
+					<a href="AddGoals.html" class="links">Add Goals</a>
+					<a href="Deposit.html" class="links">Deposit</a>
+					<a href="ViewAll.html" class="links">ViewAll</a>
+					<a href="Status.html" class="links">Status</a>
+				</div>
+			</div>
+		</div>
+		<div id="container">
+		<header>
+			<div class="SVG ">
+					<a href="#" onclick="openSlideMenu()">
+						<!-- <svg width="30"height="30"> -->
+							<!-- <path d="M0,5,30,5" stroke="White" stroke-width="5"/> -->
+							<!-- <path d="M0,14,30,14" stroke="white" stroke-width="5"/> -->
+							<!-- <path d="M0,23,30,23" stroke="White" stroke-width="5"/> -->
+						<!-- </svg> -->
+						<img src="img/side.png" alt="sidebar" height="70px" width="70px"/>
+					</a>
+				</div>
+			<h1 class="logo">Goal Saver </h1>
+		</header>
+
+		<main>
+			<div class="update-form">
+				<form name="updateInfo" class="updateform">
+						<h2>Enter Goal</h2>
+
+				<label class="label">Goal's Name</label>
+				<input type="text" id="goalName" class="input" name="name"><br/>
+				<br/>
+
+				<label class="label">Goal Amount</label>
+				<input type="number" id="goalAmount" class="input" name="amount"><br/>
+				<br/>
+
+				<label class="label">Type of Goal</label>
+				<select id ="goalType"  class="goal-select" name="GoalType">
+					<option value="personal">Personal</option>
+					<option value="business">Business</option>
+					<option value="down payment">Down Payment</option>
+					<option value="debt pay off">Debt Pay Off</option>
+				</select>
+			<br/>
+			<br/>
+				<label class="label">Current Savings</label>
+				<input type="number" id="currentSavings" class="input" name="savings">
+				<br/>
+				<br/>
+
+				<label class="label">Are you finish?</label>
+				<select  id="complete">
+					<option value="Yes"> Yes</option>
+					<option value="No" selected> NO</option>
+
+				</select>
+				<br/>
+				<br/>
+
+				<button onclick="store()"  class="submit-btn1"  id = "btn1" type="button">Submit</button>
+
+
+
+			</div>
+		</main>
+		<footer>
+			<p> Created By:Alexa-Rae & Romario &copy; </p>
+		</footer>
+	</div>
+
+</body>
+</html>

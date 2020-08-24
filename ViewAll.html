@@ -1,0 +1,147 @@
+<html>
+<head>
+	<title> Goal Saver| Home </title>
+
+		<link rel="stylesheet" href="style.css"/>
+		<script src="JS/Account.js" defer></script>
+		<script src="JS/Effects.js"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Piedra&display=swap" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
+			<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+<style>
+main{
+	height: 80%;
+	/* overflow: hidden; */
+}
+.ShowDetails{
+	width:70%;
+	height:50%;
+	position:absolute;
+	top:50%;
+	left:40%;
+	transform:translate(-50%,-50%);
+
+
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.4);
+}
+th{
+font-size:3em;
+padding: 50px;
+background-color: #000066;
+	color:white;
+}
+td {
+  text-align: left;
+  padding: 3%;
+	font-size:2em;
+}
+
+tr:nth-child(even) {
+	background-color: #000066;
+	color:white;
+}
+tr:nth-child(odd) {
+	background-color: #e6e6f0;
+	color:#000066;
+}
+</style>
+
+</head>
+<body onload="display()">
+	<script src="JS/pouchdb-7.0.0.min.js"></script>
+	<script type="text/javascript" >
+	<!--
+	var db;
+
+			db = new PouchDB("Goals_db");
+
+	
+	-->
+	</script>
+	<script type="text/javascript" src="JS/Account.js" > </script>
+
+		<div id="side-menu" class="side-nav">
+			<a href="#" class="btn-close" onclick="closeSlideMenu()">+</a>
+			<!-- User Card -->
+			<div class="card">
+				<div class="card-img">
+					<img src="img/admin.png" alt="Icon"  height="300px" width="300px">
+				</div>
+				<div class="card-info">
+					<h3>
+					<script>
+					var Name=localStorage.getItem("Name");
+					document.write("Welcome "+ Name);
+					</script>
+					</h3>
+					<a href="update.html" class="card-link">Update Profile </a><br>
+					<button class="Card-btn" onClick="SignOut()">Sign Out</button>
+				</div>
+				<div class="sidebar-link">
+					<a href="index.html" class="links">Home</a>
+					<a href="AddGoals.html" class="links">Add Goals</a>
+					<a href="Deposit.html" class="links">Deposit</a>
+					<a href="ViewAll.html" class="links">ViewAll</a>
+					<a href="Status.html" class="links">Status</a>
+
+
+				</div>
+			</div>
+		</div>
+
+	<div id="container">
+
+		<div class="SVG ">
+			<a href="#" onclick="openSlideMenu()">
+				<svg width="30"height="30">
+					<path d="M0,5,30,5" stroke="white" stroke-width="5"/>
+					<path d="M0,14,30,14" stroke="white" stroke-width="5"/>
+					<path d="M0,23,30,23" stroke="white" stroke-width="5"/>
+				</svg>
+			</a>
+		</div>
+			<header>
+			<div class="SVG ">
+					<a href="#" onclick="openSlideMenu()">
+						<!-- <svg width="30"height="30"> -->
+							<!-- <path d="M0,5,30,5" stroke="White" stroke-width="5"/> -->
+							<!-- <path d="M0,14,30,14" stroke="white" stroke-width="5"/> -->
+							<!-- <path d="M0,23,30,23" stroke="White" stroke-width="5"/> -->
+						<!-- </svg> -->
+						<img src="img/side.png" alt="sidebar" height="70px" width="70px"/>
+					</a>
+				</div>
+			<h1 class="logo">Goal Saver </h1>
+		</header>
+		<main>
+			<div class="ShowDetails">
+			<table id="ShowAllRecords">
+			<tbody>
+				<tr class="trbody">
+				<th class="ShowAllRecords">Goal Name </th>
+				<th class="ShowAllRecords">Goal Type </th>
+				<th class="ShowAllRecords">Goal Amount </th>
+				<th class="ShowAllRecords">Current Savings </th>
+				<th class="ShowAllRecords">Complete </th>
+				</tr>
+			</tbody>
+				<tbody id="ShowRecords">
+
+
+				</tbody>
+			</table>
+		</main>
+		<footer>
+			<p> Created By:Alexa-Rae & Romario &copy; </p>
+		</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,168 @@
+<html>
+<head>
+	<title> Goal Saver| Home </title>
+
+		<link rel="stylesheet" href="style.css"/>
+		<script src="JS/Account.js" defer></script>
+		<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Piedra&display=swap" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Montaga&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<script src="JS/pouchdb-7.0.0.min.js"></script>
+	<script type="text/javascript" >
+	<!--
+	var db;
+
+			db = new PouchDB("Goals_db");
+
+	   
+	-->
+	</script>
+	<script type="text/javascript" src="JS/Account.js" > </script>
+
+		<div id="side-menu" class="side-nav">
+			<a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
+			<!-- User Card -->
+			<div class="card">
+				<div class="card-img">
+					<img src="img/admin.png" alt="Icon"  height="300px" width="300px">
+				</div>
+				<div class="card-info">
+					<h3>
+					<script>
+					var Name=localStorage.getItem("Name");
+					document.write("Welcome "+ Name);
+					</script>
+					</h3>
+					<a href="update.html" class="card-link">Update Profile </a><br>
+					<button class="Card-btn" onClick="SignOut()">Sign Out</button>
+				</div>
+					<div class="sidebar-link">
+					<a href="index.html" class="links">Home</a>
+					<a href="AddGoals.html" class="links">Add Goals</a>
+					<a href="Deposit.html" class="links">Deposit</a>
+					<a href="ViewAll.html" class="links">ViewAll</a>
+					<a href="Status.html" class="links">Status</a>
+				</div>
+			</div>
+		</div>
+
+	<div id="container">
+
+		<header>
+			<div class="SVG ">
+					<a href="#" onclick="openSlideMenu()">
+						<!-- <svg width="30"height="30"> -->
+							<!-- <path d="M0,5,30,5" stroke="White" stroke-width="5"/> -->
+							<!-- <path d="M0,14,30,14" stroke="white" stroke-width="5"/> -->
+							<!-- <path d="M0,23,30,23" stroke="White" stroke-width="5"/> -->
+						<!-- </svg> -->
+						<img src="img/side.png" alt="sidebar" height="70px" width="70px"/>
+					</a>
+				</div>
+			<h1 class="logo">Goal Saver </h1>
+
+		</header>
+
+		<main>
+
+			<div class="Goal-status">
+			<div class="white-bg"></div>
+				<div class="gauge">
+					<div class="gauge-body">
+						<div class="gauge-fill"></div>
+						<div class="gauge-cover">
+
+						</div>
+					</div>
+				</div>
+				<div class="status-bar">
+					<table>
+						<caption> Details </caption>
+						<tr>
+							<th>Name:</th>
+							<td>
+								<script>
+								var Description=localStorage.getItem("goalName");
+								document.write(Description);
+								</script>
+							</td>
+						</tr>
+
+						<tr>
+							<th>Complete:</th>
+							<td>
+								<script>
+
+								var complete=localStorage.getItem("complete");
+								document.write(complete);
+
+								</script>
+							</td>
+
+						</tr>
+
+						<tr>
+							<th>Type of Goal:</th>
+							<td>
+								<script>
+								var type=localStorage.getItem("goalType");
+								document.write(type);
+								</script>
+							</td>
+						</tr>
+						<tr>
+							<th>Remainer:</th>
+							<td>
+								<script>
+								var totalAmount=localStorage.getItem("goalAmount");
+								var currentAmount=localStorage.getItem("currentSavings");
+								var remainder=totalAmount-currentAmount;
+								document.write(remainder+"/"+totalAmount);
+								</script>
+							</td>
+
+						</tr>
+
+					</table>
+				</div>
+
+			</div>
+		</main>
+
+	</div>
+	<script src="JS/Effects.js"></script>
+	<script>
+		//special feature
+		//gauge
+	const gaugeElement = document.querySelector(".gauge");
+
+	function setGaugeValue(gauge, value){
+		if(value < 0 || value> 1){
+			return;
+		}
+		var rotate=value / 2;
+		gauge.querySelector(".gauge-fill").style.transform ="rotate("+rotate+"turn)";
+
+		var cal=Math.round(value * 100);
+
+	gauge.querySelector(".gauge-cover").textContent =cal+"%";
+	}
+		var totalAmount=localStorage.getItem("goalAmount");
+
+		var currentAmount=localStorage.getItem("currentSavings");
+		var remainder=totalAmount-currentAmount;
+		var remainderPercentage=currentAmount/totalAmount;
+		setGaugeValue(gaugeElement, remainderPercentage);
+
+
+
+	</script>
+</body>
+</html>
